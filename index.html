@@ -1,27 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HackGrow</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HackGrow</title>
+
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+
+  body{
+    background:#f4f6f9;
+    padding:40px;
+  }
+
+  h1{
+    text-align:center;
+    margin-bottom:40px;
+    color:#222;
+  }
+
+  .container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+
+  .card{
+    width:280px;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+  }
+
+  .card img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+  }
+
+  .card-content{
+    padding:20px;
+  }
+
+  .card h4{
+    margin-bottom:10px;
+    color:#333;
+  }
+
+  .card p{
+    color:#666;
+    margin-bottom:8px;
+  }
+
+  button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#4CAF50;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+  }
+
+  button:hover{
+    background:#3f9443;
+  }
+
+  .locked{
+    opacity:0.7;
+  }
+
+  .locked button{
+    background:#999;
+    cursor:not-allowed;
+  }
+
+  .lock{
+    color:#d9534f;
+    font-weight:bold;
+    margin-bottom:10px;
+  }
+</style>
+
 </head>
 <body>
-  <h1>HackGrow - Dashboard</h1>
-  <div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjd7YhkePgIbmctSWkRKtYfpXjLphzJ9-hqwsJpyieA&s">
-    <h4>Day 1</h4>
-    <p>Little project description</p>
-    <p>2 Hours</p>
-    <button>Join -></button>
-  </div>
 
-  <div>
-    <h3>Locked: </h3>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmI1-zzDHSOWMM1tZ49EZgsRs0tpBhXCbGG6FWW-OkHQ&s">
-    <h4>Day 2</h4>
-    <p>...</p>
-    <p>... Hours</p>
-    <button>Join -></button>
-  </div>
+<h1>HackGrow Dashboard</h1>
+
+<div class="container">
+
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjd7YhkePgIbmctSWkRKtYfpXjLphzJ9-hqwsJpyieA&s" alt="">
+        <div class="card-content">
+            <h4>Day 1</h4>
+            <p>Little project description</p>
+            <p>2 Hours</p>
+            <button>Join →</button>
+        </div>
+    </div>
+
+    <div class="card locked">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmI1-zzDHSOWMM1tZ49EZgsRs0tpBhXCbGG6FWW-OkHQ&s" alt="">
+        <div class="card-content">
+            <div class="lock">Locked</div>
+            <h4>Day 2</h4>
+            <p>...</p>
+            <p>-- Hours</p>
+            <button disabled>Locked</button>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
