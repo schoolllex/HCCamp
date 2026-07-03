@@ -24,11 +24,19 @@
     color:#222;
   }
 
+  .layout{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    align-items:flex-start;
+  }
+
   .container{
     display:flex;
     justify-content:center;
     gap:30px;
     flex-wrap:wrap;
+    max-width:900px;
   }
 
   .card{
@@ -89,6 +97,34 @@
     font-weight:bold;
     margin-bottom:10px;
   }
+
+  .sidebar{
+    width:220px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    height:fit-content;
+  }
+
+  .sidebar h3{
+    margin-bottom:15px;
+    color:#333;
+  }
+
+  .sidebar p{
+    margin-bottom:10px;
+    color:#555;
+  }
+
+  .sidebar button{
+    background:#007bff;
+    margin-top:10px;
+  }
+
+  .sidebar button:hover{
+    background:#0062cc;
+  }
 </style>
 
 </head>
@@ -96,28 +132,41 @@
 
 <h1>HackGrow Dashboard</h1>
 
-<div class="container">
+<div class="layout">
 
-    <div class="card">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjd7YhkePgIbmctSWkRKtYfpXjLphzJ9-hqwsJpyieA&s" alt="">
-        <div class="card-content">
-            <h4>Day 1</h4>
-            <p>Little project description</p>
-            <p>2 Hours</p>
-            <button>Join →</button>
-        </div>
-    </div>
+  <div class="container">
 
-    <div class="card locked">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmI1-zzDHSOWMM1tZ49EZgsRs0tpBhXCbGG6FWW-OkHQ&s" alt="">
-        <div class="card-content">
-            <div class="lock">Locked</div>
-            <h4>Day 2</h4>
-            <p>...</p>
-            <p>-- Hours</p>
-            <button disabled>Locked</button>
-        </div>
-    </div>
+      <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjd7YhkePgIbmctSWkRKtYfpXjLphzJ9-hqwsJpyieA&s">
+          <div class="card-content">
+              <h4>Day 1</h4>
+              <p>Little project description</p>
+              <p>2 Hours</p>
+              <button>Join →</button>
+          </div>
+      </div>
+
+      <div class="card locked" id="day2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmI1-zzDHSOWMM1tZ49EZgsRs0tpBhXCbGG6FWW-OkHQ&s">
+          <div class="card-content">
+              <div class="lock">Locked</div>
+              <h4>Day 2</h4>
+              <p>Coming soon</p>
+              <p>-- Hours</p>
+              <button disabled>Locked</button>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="sidebar">
+    <h3>Progress</h3>
+    <p>Day 1: ❌</p>
+    <p>Day 2: 🔒</p>
+
+    <h3>Actions</h3>
+    <button>Reset</button>
+  </div>
 
 </div>
 
